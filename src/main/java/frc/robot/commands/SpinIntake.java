@@ -6,15 +6,25 @@ import frc.robot.subsystems.Intake;
 
 public class SpinIntake extends IndefiniteCommand
 {
-    private final double INTAKE_SPEED;
+    private double speed;
     public SpinIntake(double speed)
     {
         addRequirements(Intake.getInstance());
-        INTAKE_SPEED = speed;
+        this.speed = speed;
     }
 
+    public void initialize()
+    {
+        System.out.println("intake command init");
+    }
+    
     public void execute()
     {      
-        Intake.getInstance().getIntakeMotor().set(ControlMode.PercentOutput, INTAKE_SPEED);      
+        Intake.getInstance().getIntakeMotor().set(ControlMode.PercentOutput, speed);     
+    }
+    
+    public void end(boolean interrupted)
+    {
+        Intake.getInstance().getIntakeMotor().set(ControlMode.Disabled, 0);
     }
 }

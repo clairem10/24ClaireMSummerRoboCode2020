@@ -31,6 +31,7 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     //Drivetrain.getInstance();
     Intake.getInstance();
+    OI.getInstance();
   }
 
   /**
