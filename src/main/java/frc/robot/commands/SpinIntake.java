@@ -2,21 +2,19 @@ package frc.robot.commands;
 
 import harkerrobolib.commands.IndefiniteCommand;
 import com.ctre.phoenix.motorcontrol.ControlMode;
-import frc.robot.OI;
 import frc.robot.subsystems.Intake;
 
 public class SpinIntake extends IndefiniteCommand
 {
-    public SpinIntake()
+    private final double INTAKE_SPEED;
+    public SpinIntake(double speed)
     {
         addRequirements(Intake.getInstance());
+        INTAKE_SPEED = speed;
     }
 
     public void execute()
-    {
-        while(OI.getInstance().getDriverGamepad().getButtonAState())
-        {
-            Intake.getInstance().getIntakeMotor().set(ControlMode.PercentOutput, 0.5);
-        }       
+    {      
+        Intake.getInstance().getIntakeMotor().set(ControlMode.PercentOutput, INTAKE_SPEED);      
     }
 }
