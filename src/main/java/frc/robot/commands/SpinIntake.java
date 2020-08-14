@@ -5,7 +5,6 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import frc.robot.OI;
 import frc.robot.subsystems.Intake;
 
-
 public class SpinIntake extends IndefiniteCommand
 {
     public SpinIntake()
