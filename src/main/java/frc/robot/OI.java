@@ -3,6 +3,7 @@ package frc.robot;
 import harkerrobolib.wrappers.HSGamepad;
 import harkerrobolib.wrappers.XboxGamepad;
 import frc.robot.commands.SpinIntake;
+import frc.robot.commands.Outtake;
 import frc.robot.commands.ToggleIntakeSolenoid;
 
 public class OI
@@ -17,6 +18,7 @@ public class OI
         operatorGamepad=new XboxGamepad(1);
         driverGamepad.getButtonB().whilePressed(new SpinIntake(0.5));
         driverGamepad.getButtonA().toggleWhenPressed(new ToggleIntakeSolenoid());
+        driverGamepad.getButtonX().whilePressed(new Outtake(0.5));
     }
 
     public static OI getInstance()
