@@ -23,7 +23,7 @@ public class SpinIntake extends IndefiniteCommand
         Intake.getInstance().getIntakeMotor().set(ControlMode.PercentOutput, speed);     
     }
     
-    public void end()
+    public void end(boolean interrupted)
     {
         Intake.getInstance().getIntakeMotor().set(ControlMode.Disabled, 0);
     }
