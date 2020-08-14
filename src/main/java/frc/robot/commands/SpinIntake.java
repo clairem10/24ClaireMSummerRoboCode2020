@@ -7,6 +7,8 @@ import frc.robot.subsystems.Intake;
 public class SpinIntake extends IndefiniteCommand
 {
     private double speed;
+    private static final boolean INTAKE_IS_INVERTED = true;
+
     public SpinIntake(double speed)
     {
         addRequirements(Intake.getInstance());
@@ -16,6 +18,7 @@ public class SpinIntake extends IndefiniteCommand
     public void initialize()
     {
         System.out.println("intake command init");
+        Intake.getInstance().getIntakeMotor().setInverted(INTAKE_IS_INVERTED);
     }
     
     public void execute()
