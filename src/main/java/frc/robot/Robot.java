@@ -8,9 +8,11 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj2.command.CommandScheduler;
 //import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.subsystems.Drivetrain;
+//import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.Intake;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -27,8 +29,8 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    Drivetrain.getInstance();
-    
+    //Drivetrain.getInstance();
+    Intake.getInstance();
   }
 
   /**
@@ -41,6 +43,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
+      CommandScheduler.getInstance().run();
   }
 
   /**
@@ -64,7 +67,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousPeriodic() {
-   
+    CommandScheduler.getInstance().run();
   }
 
   /**
@@ -79,6 +82,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
+    CommandScheduler.getInstance().run();
   }
 
   /**
@@ -93,6 +97,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void disabledPeriodic() {
+    CommandScheduler.getInstance().run();
   }
 
   /**
@@ -107,5 +112,6 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void testPeriodic() {
+    CommandScheduler.getInstance().run();
   }
 }
