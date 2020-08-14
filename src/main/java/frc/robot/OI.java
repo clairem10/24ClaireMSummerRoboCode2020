@@ -2,6 +2,8 @@ package frc.robot;
 
 import harkerrobolib.wrappers.HSGamepad;
 import harkerrobolib.wrappers.XboxGamepad;
+import frc.robot.commands.SpinIntake;
+
 
 public class OI
 {
@@ -13,6 +15,7 @@ public class OI
     {
         driverGamepad=new XboxGamepad(0);
         operatorGamepad=new XboxGamepad(1);
+        driverGamepad.getButtonB().whilePressed(new SpinIntake(0.5));
     }
 
     public static OI getInstance()
