@@ -10,6 +10,7 @@ public class Intake extends SubsystemBase
     private HSTalon intakeMotor;
     private DoubleSolenoid intakeSolenoid;
     private static Intake it;
+    public static final boolean INTAKE_IS_INVERTED = true;
 
     private Intake ()
     {
